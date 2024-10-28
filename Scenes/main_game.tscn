@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bobngovf37i6r"]
+[gd_scene load_steps=6 format=3 uid="uid://bobngovf37i6r"]
 
 [ext_resource type="PackedScene" uid="uid://ypgqgtjbxsn1" path="res://Scenes/paddle.tscn" id="1_w4adb"]
 [ext_resource type="PackedScene" uid="uid://dg8o2by0kfhox" path="res://Scenes/ball.tscn" id="2_hdwvr"]
@@ -29,3 +29,6 @@ position = Vector2(616, -1)
 rotation = 1.5708
 
 [node name="OutOfBounds" parent="." instance=ExtResource("4_8xsbh")]
+
+[node name="Brick" parent="." instance=ExtResource("5_2mixc")]
+position = Vector2(147, 72)

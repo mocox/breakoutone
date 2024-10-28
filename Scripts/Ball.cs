@@ -19,6 +19,12 @@ public partial class Ball : CharacterBody2D
 		//System.Diagnostics.Debug.WriteLine("Debug: PhysProcess from Ball");
 
 		var collision = MoveAndCollide(Velocity * (float)delta);
+		var collider = collision.GetCollider();
+		if (collider is not null && collider.GetType() == typeof(Brick)){
+			((Brick)collider).Hit();
+		}
+	
+
 		if (collision is not null){
 			Velocity = Velocity.Bounce(collision.GetNormal());
 		}
