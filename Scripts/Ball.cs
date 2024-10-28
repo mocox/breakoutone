@@ -3,7 +3,7 @@ using System;
 
 public partial class Ball : CharacterBody2D
 {
-	int Speed = 100;
+	int Speed = 200;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -19,14 +19,13 @@ public partial class Ball : CharacterBody2D
 		//System.Diagnostics.Debug.WriteLine("Debug: PhysProcess from Ball");
 
 		var collision = MoveAndCollide(Velocity * (float)delta);
-		var collider = collision.GetCollider();
-		if (collider is not null && collider.GetType() == typeof(Brick)){
-			((Brick)collider).Hit();
-		}
-	
-
+		
 		if (collision is not null){
 			Velocity = Velocity.Bounce(collision.GetNormal());
+			var collider = collision.GetCollider();
+			if (collider.HasMethod("Hit")){
+				((Brick)collider).Hit();
+			}
 		}
 
 		if (Velocity.Y > 0 && Velocity.Y < 100){
@@ -36,5 +35,7 @@ public partial class Ball : CharacterBody2D
 		if (Velocity.X == 0){
 			Velocity = new Vector2(Speed*-1,Speed);
 		}
+
+		
     }
 }
