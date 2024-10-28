@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dg8o2by0kfhox" path="res://Scenes/ball.tscn" id="2_hdwvr"]
 [ext_resource type="PackedScene" uid="uid://baem0hdyl6xwj" path="res://Scenes/left_bound.tscn" id="3_tmtfp"]
 [ext_resource type="PackedScene" uid="uid://dx66q4xxxm1pp" path="res://Scenes/out_of_bounds.tscn" id="4_8xsbh"]
+[ext_resource type="PackedScene" uid="uid://dskik8cyy2foc" path="res://Scenes/brick.tscn" id="5_2mixc"]
 
 [node name="MainGame" type="Node"]
 
