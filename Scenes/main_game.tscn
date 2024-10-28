@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bobngovf37i6r"]
+
+[ext_resource type="PackedScene" uid="uid://ypgqgtjbxsn1" path="res://Scenes/paddle.tscn" id="1_w4adb"]
+[ext_resource type="PackedScene" uid="uid://dg8o2by0kfhox" path="res://Scenes/ball.tscn" id="2_hdwvr"]
+[ext_resource type="PackedScene" uid="uid://baem0hdyl6xwj" path="res://Scenes/left_bound.tscn" id="3_tmtfp"]
+[ext_resource type="PackedScene" uid="uid://dx66q4xxxm1pp" path="res://out_of_bounds.tscn" id="4_8xsbh"]
+
+[node name="MainGame" type="Node"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_w4adb")]
+position = Vector2(304, 301)
+scale = Vector2(1.1, 1.1)
+
+[node name="Ball" parent="." instance=ExtResource("2_hdwvr")]
+position = Vector2(309, 191)
+
+[node name="LeftBound" parent="." instance=ExtResource("3_tmtfp")]
+position = Vector2(-1, 0)
+
+[node name="RightBound" parent="." instance=ExtResource("3_tmtfp")]
+position = Vector2(601, 0)
+
+[node name="TopBound" parent="." instance=ExtResource("3_tmtfp")]
+position = Vector2(296, -1)
+rotation = 1.5708
+
+[node name="TopBound2" parent="." instance=ExtResource("3_tmtfp")]
+position = Vector2(616, -1)
+rotation = 1.5708
+
+[node name="OutOfBounds" parent="." instance=ExtResource("4_8xsbh")]
