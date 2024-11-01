@@ -14,7 +14,7 @@ position = Vector2(304, 301)
 scale = Vector2(1.1, 1.1)
 
 [node name="Ball" parent="." instance=ExtResource("2_hdwvr")]
-position = Vector2(309, 191)
+position = Vector2(307, 141)
 
 [node name="LeftBound" parent="." instance=ExtResource("3_tmtfp")]
 position = Vector2(-1, 0)

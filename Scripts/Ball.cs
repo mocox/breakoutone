@@ -1,22 +1,27 @@
 using Godot;
 using System;
+using System.Security.Cryptography;
 
 public partial class Ball : CharacterBody2D
 {
-	int Speed = 150;
+	int Speed = 0;
+	bool isActive = false;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		System.Diagnostics.Debug.WriteLine("Debug: Ball ready");
-
-		Velocity = new Vector2(Speed,Speed*-1);
-		
 	}
 
     public override void _PhysicsProcess(double delta)
     {
 		//System.Diagnostics.Debug.WriteLine("Debug: PhysProcess from Ball");
+
+		if (Input.IsActionPressed("StartBall") && !isActive){
+			Velocity = new Vector2(Speed,Speed*-1);
+			Speed = 150;
+			isActive = true;
+		}
 
 		var collision = MoveAndCollide(Velocity * (float)delta);
 		

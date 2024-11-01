@@ -18,7 +18,10 @@ public partial class OutOfBounds : Area2D
 		// Get the ball
 		if (body is Ball){
 			System.Diagnostics.Debug.WriteLine("Debug: Out of bounds");
+			
 		}
 		
 	}
+
+
 }
